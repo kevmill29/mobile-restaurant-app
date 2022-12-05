@@ -1,0 +1,161 @@
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body {
+    margin: 0 auto 50px auto;
+    padding:0;
+    font-family: 'Shadows Into Light', cursive;
+    background-color: #f5f5f5;
+    max-width: 700px;
+    
+} 
+
+/* Main Styling Sections */
+header{
+    background:url('./images/header-img.png');
+    background-size: cover;
+    height: 167px;
+    padding: 0; 
+    
+}
+
+.container{
+    width: 100%; 
+    height: 100%;
+    margin: 0 auto; 
+    background-color: white; 
+    padding: 0; 
+}
+
+
+.hidden{
+   display:none ;  
+}
+
+/* Modals */
+
+.payment-modal {
+    box-shadow: 5.186544418334961px 5.186544418334961px 255.43731689453125px 0px #00000080;
+    width: 87.33%;
+    height: 542.24px;
+    position: absolute;
+    top: 292px;
+    left: 130px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+     background-color: white;
+     
+    
+}
+form{
+    display: flex;
+    flex-direction: column; 
+}
+
+
+textarea, .card-details{
+  width: 449.1px;  
+  border:1.29664px solid #757575;
+  
+}
+
+textarea ,.card-details, .pay-btn {
+    padding: 0px 0 0 26px;
+    margin:0 auto 23.22px auto;
+    resize: none; 
+    font-size: 20px; 
+    border-radius: 3.88991px;
+    height: 71.3px;
+}
+
+.pay-btn{
+    width: 475.91px;
+    border:none;
+    margin:23.6px auto 23.22px auto;
+    padding: 17px 0 14px 26px; 
+    background-color: #16DB99;
+    color: white; 
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* Menu Section */
+
+.menu-item-div{ 
+    border-bottom: 1px solid #D2D2D2;
+    margin:auto auto;  
+    height: 140px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px; 
+}
+
+.menu-item{
+    width: 70px;
+    height: 89px;
+    margin: auto;
+}
+.item-desc{
+    margin-left: 0;
+    padding:0;
+}
+
+.plus{
+    border-radius: 50%;
+    font-size: 24px;
+    color: #3C3C3C;
+    border: 2px solid #DEDEDE;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+/* TYPOLOGY SECTION */
+
+header p, header h1{
+  color: white; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; 
+  top: 46px;
+  left: 46px;
+}
+
+h1{
+    font-size: 39px; 
+}
+
+
+.center{
+    text-align: center;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+ h3{
+    margin: 47px 0;
+    font-size: 24px;
+}
+
+h2,p,h4{
+    margin:8px
+}
+
+h2{
+   font-size: 28px; 
+}
