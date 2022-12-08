@@ -47,7 +47,7 @@ function orderHtml(){
         
         <div class="order-list">
         <div class="inner-order-list">
-            <p><strong>${item.name}</strong></h2>
+            <p><strong>${item.name}</strong></p>
             <button class="remove-btn" data-remove="${item.uuid}">remove</button>
         </div>
         <p><strong>$${item.price}</strong></h2>
@@ -85,13 +85,11 @@ function menuHtml(){
     return menu 
 }
 let render =()=>{
-    if (orderSummaryArray.length === 0){
-        document.getElementById('ORDER-SUMMARY').style.display ="none"
-    }
+    
     
 document.getElementById('MENU-ITEMS').innerHTML = menuHtml()
 document.getElementById("wrapper").innerHTML = orderHtml()
-document.getElementById("total-price").innerHTML = TotalPrice()
+// document.getElementById("total-price").innerHTML = TotalPrice()
 
 
 

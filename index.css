@@ -85,6 +85,7 @@ textarea ,.card-details, .pay-btn {
     color: #BBBBBB;
     margin-top: 0.3em;
     font-weight: 700;
+    cursor: pointer;
 }
 
 /* Menu Section */
@@ -100,10 +101,6 @@ textarea ,.card-details, .pay-btn {
 }
 .menu-item-div{
     border-bottom: 1px solid #D2D2D2;
-}
-
-.order-list{
-    margin:0;
 }
 
 .menu-item{
@@ -129,8 +126,20 @@ textarea ,.card-details, .pay-btn {
     cursor: pointer;
 }
 
+/* Order Section */
 
+.order-summary
 
+.order-list{
+    margin:0;
+    border: 2px solid yellowgreen;
+}
+
+.wrapper{
+    margin: 0;
+    padding: 0;
+    
+}
 
 /* TYPOLOGY SECTION */
 
