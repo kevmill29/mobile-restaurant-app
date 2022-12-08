@@ -79,10 +79,17 @@ textarea ,.card-details, .pay-btn {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+.remove-btn {
+    background: none;
+    border: none;
+    color: #BBBBBB;
+    margin-top: 0.3em;
+    font-weight: 700;
+}
+
 /* Menu Section */
 
-.menu-item-div{ 
-    border-bottom: 1px solid #D2D2D2;
+.menu-item-div, .order-list{ 
     margin:auto auto;  
     height: 140px;
     display: flex;
@@ -90,6 +97,13 @@ textarea ,.card-details, .pay-btn {
     justify-content: space-between;
     align-items: center;
     padding: 0px 40px; 
+}
+.menu-item-div{
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.order-list{
+    margin:0;
 }
 
 .menu-item{
@@ -102,7 +116,7 @@ textarea ,.card-details, .pay-btn {
     margin-left: 0;
     padding:0;
 }
-.left{
+.left, .inner-order-list{
     display:flex;
 }
 
@@ -114,6 +128,8 @@ textarea ,.card-details, .pay-btn {
     padding: 15px;
     cursor: pointer;
 }
+
+
 
 
 /* TYPOLOGY SECTION */
