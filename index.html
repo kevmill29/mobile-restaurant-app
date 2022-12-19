@@ -27,21 +27,28 @@
                     <!-- TO APPEAR AFTER ADD BUTTON CLICKED -->
                     <div class="ORDER-SUMMARY " id="ORDER-SUMMARY"> 
                         <div class="order-wrapper" id="order-wrapper">
-                            <h2 class="center"> Your order</h2>  
+                            <h2 class="center"> Your order </h2>  
                                 <div class="wrapper" id="wrapper">
                                 </div>
+                        </div>             
+                            <div class="total-price " id="total-price">
                             </div>
+                            <button class="complete-btn" id="complete-btn" data-complete="complete">Complete Order</button>
                     </div>
                     <!-- TO APPEAR AFTER ORDER SELECTION SUBMITTED -->
                     <div class="payment-modal hidden" id="payment-modal">
-                        <form>
+                        
                             <h3> Enter Card Details </h3>
-                                <input placeholder="Enter your name" id="name" type="text" class="card-details">
-                                <input class="card-details" id="card-number" type="number" placeholder="Enter card number"/>
-                                <input id="CVV" class="card-details" type="number" placeholder="Enter CVV"/>
-                                <button class="pay-btn" data-pay="pay">Pay</button>
-                        </form> 
+                            <form id="myForm"> 
+                                <input placeholder="Enter your name" id="name" type="text" class="card-details" required>
+                                <input class="card-details" id="card-number" type="number" placeholder="Enter card number" required>
+                                <input id="CVV" class="card-details" type="number" placeholder="Enter CVV" name="cvv" required>
+                                <input type="submit" id="pay-btn" class="pay-btn" placeholder="Pay" data-pay="complete">
+                        </form>  
                     </div>
+                    <div class="loading-screen hidden" id="loading-screen"></div>
+                    
+                                                              
                 </main>
         </div>
             

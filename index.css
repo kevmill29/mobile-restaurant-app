@@ -18,6 +18,7 @@ header{
     background-size: cover;
     height: 167px;
     padding: 0; 
+    margin-bottom: 80px;
 }
 
 .container{
@@ -28,6 +29,26 @@ header{
     padding: 0; 
 }
 
+.loading-spinner {
+    width: 50%;
+    height: 50%;
+    background-color: white ;
+    border-radius: 50%;
+    border:3px solid lightblue;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: rotate(180deg);
+      
+    }
+  }
 
 .hidden{
    display:none ;  
@@ -35,13 +56,14 @@ header{
 
 /* Modals */
 
-.payment-modal {
+.payment-modal, .loading-screen, .thankYouMessage {
     box-shadow: 5.186544418334961px 5.186544418334961px 255.43731689453125px 0px #00000080;
-    width: 87.33%;
+    width: 524px;
     height: 542.24px;
     position: absolute;
-    top: 292px;
-    left: 130px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: white;
@@ -97,10 +119,12 @@ textarea ,.card-details, .pay-btn {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px; 
+    
 }
 .menu-item-div{
     border-bottom: 1px solid #D2D2D2;
+    margin:45px 0 0 0 ;
+    padding:30px 0 83px 0;
 }
 
 .menu-item{
@@ -128,17 +152,49 @@ textarea ,.card-details, .pay-btn {
 
 /* Order Section */
 
-.order-summary
+.ORDER-SUMMARY{
+    margin:96px 0 0 0;
 
+}
 .order-list{
-    margin:0;
-    border: 2px solid yellowgreen;
+    height: 43px;
 }
 
-.wrapper{
+.wrapper,.total-price,.order-list{
     margin: 0;
-    padding: 0;
-    
+}
+
+.center{
+    margin-bottom: 64px;
+}
+
+.inner-total-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-wrapper{
+    border-bottom: 2px solid black;
+    margin-bottom: 14px; 
+    padding-bottom: 31px;
+}
+
+.complete-btn{
+    width: 100%;
+    background-color:#16DB99;
+    border: none;
+    color: white;
+    height: 60px;
+    font-size: 16px; 
+    margin: 53px 0 40px 0; 
+    font-weight: 800px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.complete-btn:hover,
+.complete-btn:active{
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 /* TYPOLOGY SECTION */
@@ -185,4 +241,8 @@ h2,p,h4{
 
 h2{
    font-size: 28px; 
+}
+
+h4{
+    font-size: 20px;
 }

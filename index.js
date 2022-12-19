@@ -2,9 +2,11 @@ import {menuArray} from './data.js'
 
 let orderDiv = document.getElementById("ORDER-SUMMARY")
 let orderSummaryArray = []
-
+const form = document.getElementById('myForm');
+const namePlaceholder = document.querySelector('#namePlaceholder');
+const thankYouMessage = document.querySelector('#thankYouMessage');
 const orderItems = document.getElementById('order-items')
-
+const loadingScreen = document.getElementById('loading-screen');
 
 document.addEventListener('click', function(e){
     if (e.target.dataset.add){
@@ -13,14 +15,60 @@ document.addEventListener('click', function(e){
     } else if (e.target.dataset.remove){
         console.log(e.target.dataset.remove)
         RemoveFrmOrder(e.target.dataset.remove)
-    } else if (e.target.dataset.pay){
-        console.log(e.target.dataset.pay)
-        PayClick(e.target.dataset.pay)
+    }
+    else if (e.target.dataset.complete){
+        handleCompleteClick(e.target.dataset.complete)
     }
 })
 
-let TotalPrice =(menuId) =>{
-    return 'Price'
+
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+ 
+  const name = document.getElementById('name').value;
+  namePlaceholder.textContent = name;
+  thankYouMessage.style.display = 'block';
+  document.getElementById('payment-modal').classList.add('hidden')
+  
+    loadingScreen.classList.remove('hidden')
+ loadingScreen.innerHTML =`
+  
+                      <h3>Order Processing...</h3>
+                                          <div class="loading-spinner"></div>
+                                          </div>`
+                                         
+    // simulate processing the order
+    setTimeout(() => {
+      loadingScreen.classList.add('hidden');
+      document.getElementById('payment-modal').innerHTML =`
+      <div id="thankYouMessage" style="display: none;">
+                                              <h4>Thank you <span id="namePlaceholder"></span> your order is on its way!</h4>
+                                            </div>`
+    }, 3000);
+})
+
+
+
+
+
+let handleCompleteClick =()=>{
+    document.getElementById('payment-modal').classList.remove("hidden")
+}
+
+let TotalPrice =() =>{
+    let totalPriceHtml = ''
+    
+    let totalPrice = 0
+    orderSummaryArray.forEach(function(order){
+        totalPrice += order.price
+    })
+    
+    totalPriceHtml = `<div class="inner-total-price">
+                <h2>Total price:</h2>
+                <h4>$${totalPrice}</h4>
+                </div>`
+    return totalPriceHtml
 }
 
 function RemoveFrmOrder(menuId){
@@ -47,10 +95,10 @@ function orderHtml(){
         
         <div class="order-list">
         <div class="inner-order-list">
-            <p><strong>${item.name}</strong></p>
+            <h2>${item.name}</h2>
             <button class="remove-btn" data-remove="${item.uuid}">remove</button>
         </div>
-        <p><strong>$${item.price}</strong></h2>
+        <h4>$${item.price}</h4>
     </div> 
         `
     })
@@ -85,11 +133,15 @@ function menuHtml(){
     return menu 
 }
 let render =()=>{
-    
+    if(orderSummaryArray.length === 0) {
+        document.getElementById("ORDER-SUMMARY").style.display = "none"
+    } else {
+        document.getElementById("ORDER-SUMMARY").style.removeProperty("display")
+    }
     
 document.getElementById('MENU-ITEMS').innerHTML = menuHtml()
 document.getElementById("wrapper").innerHTML = orderHtml()
-// document.getElementById("total-price").innerHTML = TotalPrice()
+document.getElementById("total-price").innerHTML = TotalPrice()
 
 
 
