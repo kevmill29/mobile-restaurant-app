@@ -17,7 +17,7 @@
     <body>
         <div class="container" id="container">
             <header>
-                <h1> Jimmy's Diner </h1>
+                <h1> Kevin's Cafe </h1>
                <p>The best burger's and pizza in town.</p>
                
             </header>
@@ -37,16 +37,20 @@
                     </div>
                     <!-- TO APPEAR AFTER ORDER SELECTION SUBMITTED -->
                     <div class="payment-modal hidden" id="payment-modal">
-                        
+                        <div>
                             <h3> Enter Card Details </h3>
+                        </div> 
+                        <div>
                             <form id="myForm"> 
-                                <input placeholder="Enter your name" id="name" type="text" class="card-details" required>
-                                <input class="card-details" id="card-number" type="number" placeholder="Enter card number" required>
-                                <input id="CVV" class="card-details" type="number" placeholder="Enter CVV" name="cvv" required>
-                                <input type="submit" id="pay-btn" class="pay-btn" placeholder="Pay" data-pay="complete">
-                        </form>  
+                                <input class="card-details" id="name" name="name" type="text" placeholder="Enter your name" required/>
+                                <input class="card-details" id="card-number" name="card-number" type="number" placeholder="Enter your card number" required />
+                                <input class="card-details" id="cvv" name="cvv" type="number" placeholder="Enter CVV" required />
+                                <button id="pay-btn" class="pay-btn">Pay</button>
+                            </form>
+                        </div>     
                     </div>
-                    <div class="loading-screen hidden" id="loading-screen"></div>
+                    <div class="modal hidden" id="modal">
+                    </div>
                     
                                                               
                 </main>

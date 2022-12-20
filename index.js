@@ -2,11 +2,11 @@ import {menuArray} from './data.js'
 
 let orderDiv = document.getElementById("ORDER-SUMMARY")
 let orderSummaryArray = []
-const form = document.getElementById('myForm');
 const namePlaceholder = document.querySelector('#namePlaceholder');
 const thankYouMessage = document.querySelector('#thankYouMessage');
 const orderItems = document.getElementById('order-items')
 const loadingScreen = document.getElementById('loading-screen');
+const myForm = document.getElementById('myForm')
 
 document.addEventListener('click', function(e){
     if (e.target.dataset.add){
@@ -18,37 +18,32 @@ document.addEventListener('click', function(e){
     }
     else if (e.target.dataset.complete){
         handleCompleteClick(e.target.dataset.complete)
-    }
-})
+    } 
+}
+)
 
 
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
- 
-  const name = document.getElementById('name').value;
-  namePlaceholder.textContent = name;
-  thankYouMessage.style.display = 'block';
-  document.getElementById('payment-modal').classList.add('hidden')
-  
-    loadingScreen.classList.remove('hidden')
- loadingScreen.innerHTML =`
-  
-                      <h3>Order Processing...</h3>
-                                          <div class="loading-spinner"></div>
-                                          </div>`
-                                         
-    // simulate processing the order
-    setTimeout(() => {
-      loadingScreen.classList.add('hidden');
-      document.getElementById('payment-modal').innerHTML =`
-      <div id="thankYouMessage" style="display: none;">
-                                              <h4>Thank you <span id="namePlaceholder"></span> your order is on its way!</h4>
-                                            </div>`
-    }, 3000);
-})
+myForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
+   // Get the value of the "name" input field
+   var name = document.getElementById("name");
 
+   
+   // Get the modal element & hide payment modal
+   var modal = document.getElementById("modal");
+   modal.classList.remove('hidden')
+ document.getElementById('payment-modal').classList.add('hidden')
+   // Set the innerHTML of the modal to a thank you message with the user's name
+   modal.innerHTML = `
+   <h3>Thank you your order is on its way, ${name.value}!</h3>`
+//    Refreshes page after 3 seconds of button being clicked
+   setTimeout(() => {
+    window.location.reload();
+}, 5000);  
+ }
+)
 
 
 
