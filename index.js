@@ -38,7 +38,7 @@ myForm.addEventListener('submit', (event) => {
    // Set the innerHTML of the modal to a thank you message with the user's name
    modal.innerHTML = `
    <h3>Thank you your order is on its way, ${name.value}!</h3>`
-//    Refreshes page after 3 seconds of button being clicked
+//    Refreshes page after 5 seconds of button being clicked
    setTimeout(() => {
     window.location.reload();
 }, 5000);  
